@@ -6,4 +6,6 @@ cascade:
   showSummary: true
 ---
 
-{{< lead >}} More to see here soon! {{< /lead >}}
+{{< lead >}}
+More to see here soon!
+{{< /lead >}}
