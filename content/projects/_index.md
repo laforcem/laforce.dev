@@ -1,8 +1,9 @@
 ---
 title: "Projects"
-description: "Stuff I spend too much time on"
 
 cascade:
   showEdit: false
   showSummary: true
 ---
+
+{{< lead >}} More to see here soon! {{< /lead >}}

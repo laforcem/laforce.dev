@@ -1,1 +1,1 @@
-### "Nothing's ever promised tomorrow today"
+Senior computer science student, hobbyist, and enthusiast. 
