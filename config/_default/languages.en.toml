@@ -15,8 +15,8 @@ dateFormat = "2 January 2006"
 [author]
   name = "Malcolm La Force"
   image = "img/me.png"
-  headline = "Bruh momentum"
-  bio = "bruh"
+  # headline = ""
+  # bio = ""
   links = [
     { email = "mailto:malc@laforce.dev" },
   #   { link = "https://link-to-some-website.com/" },
