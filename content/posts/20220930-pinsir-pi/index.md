@@ -2,7 +2,7 @@
 title: Deploying a Discord.js bot to... a Raspberry Pi
 description: Paying a monthly fee to host a basic Discord bot isn't necessary; here's how I did it with my Raspberry Pi.
 date: 2022-10-02
-draft: true
+draft: false
 ---
 
 Even though I've used Discord as a platform for many years, and been interested in possibly creating a bot, I never did properly look into it. That recently changed when one of my [most-used bots](https://github.com/stoir/passel_public/), Passel, was announced to be discontinued. I discovered that one of the users of the bot had created a [fork](https://github.com/somedumbfox/passel-js) called `passel-js` using Discord.js, and being more familiar with JavaScript than Python, I decided to go for it.
