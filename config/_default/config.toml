@@ -5,6 +5,7 @@
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
 languageCode = "en"
+theme = "congo"
 
 enableRobotsTXT = true
 paginate = 10
