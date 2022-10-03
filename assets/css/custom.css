@@ -22,7 +22,7 @@
     --color-secondary-700: 14, 116, 144;
     --color-secondary-800: 21, 94, 117;
     --color-secondary-900: 22, 78, 99;
-    }
+}
 
 .prose code::before {
     content: ''
