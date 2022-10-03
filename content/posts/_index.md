@@ -7,5 +7,5 @@ cascade:
 ---
 
 {{< lead >}}
-More to see here soon!
+Where I talk about stuff I've done
 {{< /lead >}}
