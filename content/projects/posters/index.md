@@ -1,6 +1,8 @@
 ---
-title: "Vintage Poster Restorations"
-layout: "simple"
+title: "Vintage Art Restorations"
+layout: "page"
+showDate: false
+showReadingTime: false
 ---
 
 While it seems that nowadays I only rarely have time for it, I enjoy scanning and restoring artwork from my favorite bands. Some of these are touch-up jobs, some of these are complete recreations, and some of them are hybrids.
