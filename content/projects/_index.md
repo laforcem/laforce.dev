@@ -49,6 +49,6 @@ Developed for EDNS 151 Design I
 
 ## Other projects
 
-{{< icon "photoshop" >}} [**Vintage Poster Restoration:**](posters.md) Restored vintage promotional posters from the 1970s and 80s.
+{{< icon "photoshop" >}} [**Vintage Poster Restoration:**](posters) Restored vintage promotional posters from the 1970s and 80s.
 
 [^1]: Most code for school projects is not publicly available for academic honesty purposes, but I am able to provide this if reached out to.
