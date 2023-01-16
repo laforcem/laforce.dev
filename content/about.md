@@ -3,7 +3,7 @@ title: "About Me"
 date: 2022-09-05
 showDate: false
 showAuthor: false
-showDateUpdated: true
+layout: "simple"
 ---
 
 ## Hey there!

@@ -2,6 +2,7 @@
 title: Deploying a Discord.js bot to... a Raspberry Pi
 summary: Paying a monthly fee to host a basic Discord bot isn't necessary; here's how I did it with my Raspberry Pi.
 date: 2022-10-02
+layout: "simple"
 draft: false
 ---
 
