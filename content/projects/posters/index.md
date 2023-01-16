@@ -1,6 +1,6 @@
 ---
 title: "Vintage Art Restorations"
-layout: "page"
+layout: "simple"
 showDate: false
 showReadingTime: false
 ---
