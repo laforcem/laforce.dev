@@ -17,6 +17,7 @@ mainSections = ["posts"]
 
 [header]
   layout = "basic" # valid options: basic, hamburger, custom
+  logo = "img/logo.png"
 
 [footer]
   showCopyright = true
