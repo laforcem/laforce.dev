@@ -3,6 +3,10 @@ title: "My Projects"
 layout: "simple"
 ---
 
+{{< lead >}}
+Some projects I've worked on in the past
+{{< /lead >}}
+
 ## School projects[^1]
 
 ### 2022
@@ -13,7 +17,7 @@ Developed for CSCI 370 Computer Science Field Session
 {{< icon "java" >}} **Clue:** A fully-functional GUI game of Clue, built by me and a partner.  
 Developed for CSCI 306 Software Engineering
 
-{{< icon "js" >}} **Express Blog:** Built a basic Markdown-based blog with Express, a Node.js web app framework.  
+{{< icon "js" >}} **Express Blog:** Built a basic Markdown-based blog with Express.js.  
 Developed for CSCI 446 Web Apps
 
 {{< icon "java" >}} **VM Translator:** A virtual machine translator built to the specifications of [Nand2Tetris](https://www.nand2tetris.org/project08).  
@@ -49,6 +53,6 @@ Developed for EDNS 151 Design I
 
 ## Other projects
 
-{{< icon "photoshop" >}} [**Vintage Poster Restoration:**](posters) Restored vintage promotional posters from the 1970s and 80s.
+{{< icon "photoshop" >}} [**Vintage Art Restorations:**](posters) Restored vintage promotional material from the 1970s and 80s (and some contemporary).
 
 [^1]: Most code for school projects is not publicly available for academic honesty purposes, but I am able to provide this if reached out to.
