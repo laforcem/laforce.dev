@@ -7,7 +7,27 @@ layout: "simple"
 Some projects I've worked on in the past
 {{< /lead >}}
 
+## Personal CS projects
+
+### 2022
+
+{{< icon "js" >}} [**Pinsir:**](https://github.com/laforcem/pinsir) A Discord bot to manage pinned message overflow.
+
+{{< icon "hugo" >}} [**laforce.dev:**](https://github.com/laforcem/laforce.dev) My personal website, which you're visiting right now!
+
+### 2019
+
+{{< icon "android" >}} [**LineageOS 14.1:**](https://wiki.lineageos.org/devices/athene/) Built LineageOS 14.1, a fork of Android 7.1, from source and installed on a Moto G4 Plus.
+
 ## School projects[^1]
+
+### 2023
+
+{{< icon "jetpack-compose" >}} [**Block Brawl:**](https://github.com/laforcem/block-brawl) An Android game where the player arranges blocks in a Tetris-style manner, built by me and two partners.  
+Developed for CSCI 448 Mobile Application Development
+
+{{< icon "gamemaker" >}}  **Reactor Zero:** A top-down roguelike shooter game, created in GameMaker by me and three partners.  
+Developer for CSCI 477 Elements of Games and Game Development
 
 ### 2022
 
@@ -38,18 +58,6 @@ Developed for CSCI 341 Computer Organization
 
 {{< icon "arduino" >}} [**COVID Design Project:**](https://youtu.be/dBNyPjdDQ8E) An automated disinfectant system for school dining halls to combat COVID-19, built by my team.  
 Developed for EDNS 151 Design I
-
-## Personal CS projects
-
-### 2022
-
-{{< icon "js" >}} [**Pinsir:**](https://github.com/laforcem/pinsir) A Discord bot to manage pinned message overflow.
-
-{{< icon "hugo" >}} [**laforce.dev:**](https://github.com/laforcem/laforce.dev) My personal website, which you're visiting right now!
-
-### 2019
-
-{{< icon "android" >}} [**LineageOS 14.1:**](https://wiki.lineageos.org/devices/athene/) Built LineageOS 14.1, a fork of Android 7.1, from source and installed on a Moto G4 Plus.
 
 ## Other projects
 
