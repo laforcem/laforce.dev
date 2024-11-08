@@ -56,3 +56,6 @@ title = "Malcolm La Force"
   #   { whatsapp = "https://wa.me/phone-number" },
   #   { youtube = "https://youtube.com/username" },
   ]
+
+[params]
+dateFormat = "January 2, 2006"
