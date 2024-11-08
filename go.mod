@@ -1,5 +1,5 @@
-module laforce.dev
+module github.com/laforcem/laforce.dev
 
-go 1.19
+go 1.23.3
 
-require github.com/jpanther/congo/v2 v2.4.2 // indirect
+require github.com/jpanther/congo/v2 v2.9.0 // indirect
