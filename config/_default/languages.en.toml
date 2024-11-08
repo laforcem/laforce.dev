@@ -8,7 +8,7 @@ title = "Malcolm La Force"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 
-[author]
+[params.author]
   name = "Malcolm La Force"
   image = "img/me-20230513.png"
   # headline = ""
