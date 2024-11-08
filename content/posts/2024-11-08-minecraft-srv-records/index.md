@@ -6,7 +6,7 @@ layout: "simple"
 draft: false
 ---
 
-Recently, I've been hosting multiple Minecraft servers. Demand has been surprisingly high, so on top of my 350-plus-mod custom Forge server, I host a couple vanilla ones as well for my friends. There are no issues with this on an infrastructure level (unless you count resource limitations), but networking proved to be a bit of a challenge with this one.
+Recently, I've been hosting multiple Minecraft servers on my one beefy Oracle Cloud instance. Demand has been surprisingly high, so on top of my 350-plus-mod custom Forge server, I host a couple vanilla ones as well for my friends. There are no issues with this on an infrastructure level (unless you count resource limitations), but networking proved to be a bit of a challenge with this one.
 
 You see, I try to use a custom domain for as much as possible, since it's bad practice to just hand out a bare IP address or even a domain with a specific port. This project was no exception to that. I wanted to map every Minecraft server running on a different port to its own subdomain. According to the Internet at large, this is actually very easy using SRV records. There were a number of [very useful writeups](https://www.mcmiddleearth.com/community/wiki/setting-up-a-srv-record/) that I consulted on this matter. The only problem was, it wasn't working.
 
