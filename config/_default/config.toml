@@ -8,8 +8,12 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 summaryLength = 0
 
+# Only generate RSS/JSON for blog posts (see /content/posts/_index.md)
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
 
 [pagination]
   pagerSize = 10
