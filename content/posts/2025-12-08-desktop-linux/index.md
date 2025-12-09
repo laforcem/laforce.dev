@@ -38,7 +38,7 @@ My general observation with those who are enthusiastic about desktop Linux and p
 
 ## A blame game
 
-Often accompanying the stories of people ditching Linux (at least online) is their take on why it's not usable. It's the gatekeeping neckbeards in the forums, it's *bad, bad NVIDIA* for not open-sourcing their drivers, it's the fragmentation of package distribution... you get the idea. These are all very true observations, but they are upstream from the problem of adoption. Why is adoption a struggle?
+Often accompanying the stories of people ditching Linux (at least online) is their take on why it's not usable. It's the gatekeeping neckbeards in the forums, it's *bad, bad NVIDIA* for not open-sourcing their drivers, it's the fragmentation of package distribution... you get the idea. These are all very true observations, but they are downstream from the problem of adoption. Why is adoption a struggle?
 
 Let's examine the most popular Linux distributions. An entire separate blog post could be written about this, examining the limited statistics that we have on the matter, but I'll just do a drive-by for now. From my limited research, the most used desktop distros coming from actual polling seem to be:
 
