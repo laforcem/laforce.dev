@@ -24,7 +24,7 @@ and a hack or two...
 
 I became sick of the relentless manual configuration needed for me to get Endeavour to behave the way I wanted it to.
 
-So, earlier this week, I switched to Fedora on both machines in hopes that it would be a bit more stable and ready out of the box. It was, to an extent. But it turns out that it didn't support TPM-backed disk encryption out of the box, and trying to install NVIDIA drivers on top of that manual process? Not happening. As it turns out, Ubuntu and openSUSE are the *only* distributions that support TPM-backed FDE out of the box, and the former doesn't yet support it with AMD machines.[^2]
+So, last week, I switched to Fedora on both machines in hopes that it would be a bit more stable and ready out of the box. It was, to an extent. But it turns out that it didn't support TPM-backed disk encryption out of the box, and trying to install NVIDIA drivers on top of that manual process? Not happening. As it turns out, Ubuntu and openSUSE are the *only* distributions that support TPM-backed FDE out of the box, and the former doesn't yet support it with AMD machines.[^2]
 
 It is at this point that I began to realize the extent that Linux still falls woefully short of the computing needs of your everyday person. Furthermore, I also realized that I had spent most of an entire week's free time getting these installations up to functional snuff for regular usage. Thus, the temptation lingering at the back of my mind early in the week came back with a vengeance, and I went back to Windows on my office machine.
 
