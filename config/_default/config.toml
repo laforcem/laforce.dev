@@ -8,9 +8,10 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 summaryLength = 0
 
-# Only generate RSS/JSON for blog posts (see /content/posts/_index.md)
+# RSS is generated for blog posts only (see /content/posts/_index.md).
+# Home needs JSON: it is the search index.
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "JSON"]
   section = ["HTML"]
   taxonomy = ["HTML"]
   term = ["HTML"]
