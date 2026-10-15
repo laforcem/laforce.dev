@@ -77,3 +77,8 @@ html.dark a:hover .logo svg > g > path {
         background-color: #155e75 !important;
     }
 }
+
+/* Consistent space between the header and page content, on every page */
+#main-content { padding-top: 1.25rem; }
+/* The theme's list template adds its own title margin; drop it so the main padding is the only gap */
+#main-content h1.mt-5 { margin-top: 0; }
