@@ -8,7 +8,8 @@ layout: "simple"
 ---
 
 {{< figure
-    src="img/neo-site-art.png"
+    src="img/neo-site-art-v2.png"
+    figureClass="about-banner"
     alt="Banner for laforce.dev"
     caption="Image by my wife"
     >}}

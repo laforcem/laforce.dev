@@ -94,3 +94,10 @@ header .main-menu #search-shortcut-hint { font-size: 13.2px; }
 /* List pages add 40px under the description on top of the lead's own 36px.
    When the description ends in a lead, drop the extra so lists match simple pages. */
 #main-content section.mb-10:has(> div > .lead:last-child) { margin-bottom: 0; }
+
+/* About-page banner: larger corners always; 66% wide and centered from tablet
+   width up, full width on phones. */
+#main-content figure.about-banner img { border-radius: 0.75rem; }
+@media (min-width: 768px) {
+  #main-content figure.about-banner { width: 66%; margin-left: auto; margin-right: auto; }
+}
