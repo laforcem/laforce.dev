@@ -4,6 +4,7 @@ layout: "simple"
 lastmod: 2024-11-08
 showDate: false
 showAuthor: false
+description: "Some projects I've worked on!"
 ---
 
 {{< lead >}}

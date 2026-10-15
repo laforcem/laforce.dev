@@ -4,6 +4,7 @@ outputs: ['html','rss']
 cascade:
   showEdit: false
   showSummary: true
+description: "Where I talk about stuff I've done or am doing"
 ---
 
 {{< lead >}}
