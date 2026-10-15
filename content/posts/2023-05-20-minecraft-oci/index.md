@@ -1,9 +1,10 @@
 ---
-title: Running powerful, free Minecraft servers with Oracle Cloud and AMP
+title: Building Sparecraft
 summary: I run several vanilla/modded Minecraft servers for free, here's how you can do the same!
 date: 2023-05-20
-layout: "simple"
+lastmod: ''
 draft: true
+layout: simple
 ---
 
 I have run a number of Minecraft servers over the years, both modded and vanilla. Most of the time, I would just pay a relatively reasonable amount to host them on a service such as PebbleHost, and I paid the bill quarterly. However, as I advanced through my computer science degree program and learned more about automation, Java, and the Linux shell, it seemed to me like it wouldn't be too horribly difficult to just run one on the technical end myself.  
