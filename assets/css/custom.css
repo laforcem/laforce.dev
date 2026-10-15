@@ -50,8 +50,8 @@ html:not(.dark) .prose :not(pre) > code {
 /* Wordmark. Blowfish forces inlined SVG logos into an 80x80 box; let the wide
    wordmark keep its aspect ratio at a fixed height. */
 .logo svg {
-    width: auto;
-    height: 2.25rem;
+    width: 10rem;
+    height: auto;
 }
 
 /* Wordmark hover. The light and dark SVGs differ from their hover variants only
