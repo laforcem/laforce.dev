@@ -90,3 +90,7 @@ header .main-menu #appearance-switcher { font-size: 15.4px; }
 header .main-menu #appearance-switcher svg { height: 1.1em; width: 1.1em; }
 header .main-menu #search-button { font-size: 15.4px; padding: 4.4px 8.8px; }
 header .main-menu #search-shortcut-hint { font-size: 13.2px; }
+
+/* List pages add 40px under the description on top of the lead's own 36px.
+   When the description ends in a lead, drop the extra so lists match simple pages. */
+#main-content section.mb-10:has(> div > .lead:last-child) { margin-bottom: 0; }
