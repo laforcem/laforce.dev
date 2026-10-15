@@ -15,10 +15,13 @@ enableCodeCopy = false
 mainSections = ["posts"]
 # robots = ""
 
+# Wordmark: light version, and the version shown in dark mode.
+logo = "img/wordmark-light.svg"
+secondaryLogo = "img/wordmark-dark.svg"
+disableTextInHeader = true
+
 [header]
-  layout = "basic" # valid options: basic, hamburger, custom
-  logo = "img/logo.png"
-  showTitle = false
+  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-fill-blur, fixed-gradient, floating
 
 [footer]
   showCopyright = true

@@ -46,3 +46,34 @@ html:not(.dark) .prose :not(pre) > code {
     border-radius: 0.25rem;
     padding: 0.1rem 0.3rem;
 }
+
+/* Wordmark. Blowfish forces inlined SVG logos into an 80x80 box; let the wide
+   wordmark keep its aspect ratio at a fixed height. */
+.logo svg {
+    width: auto;
+    height: 2.25rem;
+}
+
+/* Wordmark hover. The light and dark SVGs differ from their hover variants only
+   in the pill fill, so hover is driven by CSS. "svg > g > path" is the pill
+   only; the lettering sits one group deeper.
+   Light: hover darkens (#155E75, white text 7.27:1) rather than lightening, so
+   it matches the "More about me" button. Dark: #0E7490 (white text 5.36:1). */
+html:not(.dark) a:hover .logo svg > g > path {
+    fill: #155e75;
+}
+
+html.dark a:hover .logo svg > g > path {
+    fill: #0e7490;
+}
+
+/* "More about me" button: Blowfish lightens it on hover (#06B6D4), which puts
+   white text at 2.43:1. Darken it instead, to match the wordmark.
+   Tailwind's hover:!bg-primary-500 is an !important declaration inside a
+   cascade layer, and layered !important beats unlayered !important, so this
+   must sit in the same layer. */
+@layer utilities {
+    html:not(.dark) a[class~="bg-primary-600"]:hover {
+        background-color: #155e75 !important;
+    }
+}
