@@ -15,7 +15,7 @@ hugo          # production build into public/
 
 - Posts: `content/posts/<yyyy-mm-dd-slug>/index.md`. Set `draft: false` to publish.
 - Pages: `content/about.md` and `content/projects/`.
-- CMS: `/admin/` ([Sveltia CMS](https://sveltiacms.app/)); sign in with a GitHub token.
+- CMS: `/admin/` ([Sveltia CMS](https://sveltiacms.app/)); sign in with a GitHub token. The post form knows title, summary, date, last updated, draft, layout and body; other front matter keys are dropped when it saves, so edit those in the file.
 
 ## Notes
 
