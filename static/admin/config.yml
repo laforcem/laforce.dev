@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+# Token sign-in only: paste a fine-grained GitHub token (Contents: read/write on
+# this repo). Host-independent. To switch to OAuth later, replace auth_methods
+# with `base_url: <your OAuth client URL>`.
+backend:
+  name: github
+  repo: laforcem/laforce.dev
+  branch: main
+  auth_methods: [token]
+
+site_url: https://laforce.dev
+display_url: https://laforce.dev
+
+# Shared media (pages). Figures reference these as "img/<file>", resolved from assets/.
+media_folder: /assets/img
+public_folder: img
+
+collections:
+  # Posts are Hugo page bundles: content/posts/<slug>/index.md
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: content/posts
+    path: '{{slug}}/index'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    media_folder: ''
+    public_folder: ''
+    format: yaml-frontmatter
+    create: true
+    summary: '{{title}}'
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: summary, label: Summary, widget: text }
+      - { name: date, label: Date, widget: datetime, type: date }
+      - { name: lastmod, label: Last updated (only set if edited later), widget: datetime, type: date, required: false }
+      - { name: draft, label: Draft, widget: boolean, default: true }
+      - { name: layout, label: Layout, widget: hidden, default: simple }
+      # Raw mode only, so Hugo shortcodes like {{< lead >}} are never rewritten.
+      - { name: body, label: Body, widget: richtext, modes: [raw] }
+
+  # Whole-file editing: front matter included, so nothing structural can be
+  # dropped on save (outputs, cascade, layout, show* flags).
+  - name: pages
+    label: Pages
+    editor:
+      preview: false
+    files:
+      - name: about
+        label: About
+        file: content/about.md
+        format: raw
+        fields:
+          - { name: body, label: content/about.md, widget: code, output_code_only: true, allow_language_selection: false, default_language: markdown }
+      - name: projects
+        label: Projects index
+        file: content/projects/_index.md
+        format: raw
+        fields:
+          - { name: body, label: content/projects/_index.md, widget: code, output_code_only: true, allow_language_selection: false, default_language: markdown }
+      - name: posters
+        label: Vintage Art Restorations
+        file: content/projects/posters/index.md
+        format: raw
+        fields:
+          - { name: body, label: content/projects/posters/index.md, widget: code, output_code_only: true, allow_language_selection: false, default_language: markdown }
+      - name: home
+        label: Home page
+        file: content/_index.md
+        format: raw
+        fields:
+          - { name: body, label: content/_index.md, widget: code, output_code_only: true, allow_language_selection: false, default_language: markdown }
+      - name: posts_index
+        label: Posts index
+        file: content/posts/_index.md
+        format: raw
+        fields:
+          - { name: body, label: content/posts/_index.md, widget: code, output_code_only: true, allow_language_selection: false, default_language: markdown }

@@ -1,0 +1,20 @@
+{{/* Search: show nothing until the visitor types. The theme runs a query on every
+     key release, and Ctrl+K's release lands in the empty box, which returns every page.
+     A capture-phase listener stops that empty query before the theme's handler runs. */}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var input = document.getElementById("search-query");
+    var output = document.getElementById("search-results");
+    if (!input || !output) return;
+    input.addEventListener(
+      "keyup",
+      function (event) {
+        if (input.value.trim() === "") {
+          event.stopImmediatePropagation();
+          output.innerHTML = "";
+        }
+      },
+      true
+    );
+  });
+</script>

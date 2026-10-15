@@ -1,0 +1,30 @@
+{{/* Override of Blowfish's simple.html: adds a date line to posts only.
+     "Updated" appears only when lastmod differs from date. */}}
+{{ define "main" }}
+  <article class="max-w-full">
+    <header>
+      {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+      {{ if eq .Section "posts" }}
+        <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+          {{ partial "meta/date.html" .Date }}
+          {{ if and (gt (.Lastmod | time.Format "2006") 1) (ne (partial "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
+            <span class="px-2 text-primary-500">&middot;</span>
+            {{ partial "meta/date-updated.html" .Lastmod }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </header>
+    <section class="max-w-full mt-6 prose dark:prose-invert">
+      {{ .Content }}
+    </section>
+    <footer class="pt-8 print:hidden">
+      {{ partial "sharing-links.html" . }}
+      {{ partial "article-comments.html" . }}
+    </footer>
+  </article>
+{{ end }}

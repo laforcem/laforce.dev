@@ -1,5 +1,5 @@
-languageCode = "en"
-languageName = "English"
+locale = "en"
+label = "English"
 weight = 1
 
 title = "Malcolm La Force"
@@ -10,7 +10,7 @@ title = "Malcolm La Force"
 
 [params.author]
   name = "Malcolm La Force"
-  image = "img/me-20230513.png"
+  image = "img/me-2024-05-18.png"
   # headline = ""
   # bio = ""
   links = [

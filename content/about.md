@@ -5,10 +5,12 @@ lastmod: 2024-11-08
 showDate: false
 showAuthor: false
 layout: "simple"
+description: "About me"
 ---
 
 {{< figure
-    src="img/neo-site-art.png"
+    src="img/neo-site-art-v2.png"
+    figureClass="about-banner"
     alt="Banner for laforce.dev"
     caption="Image by my wife"
     >}}

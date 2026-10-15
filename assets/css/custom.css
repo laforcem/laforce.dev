@@ -1,27 +1,30 @@
 :root {
-    /* copied from the Ocean theme to keep grey bg with blue accents */
-    /* Blue */
-    --color-primary-50: 239, 246, 255;
-    --color-primary-100: 219, 234, 254;
-    --color-primary-200: 191, 219, 254;
-    --color-primary-300: 147, 197, 253;
-    --color-primary-400: 96, 165, 250;
-    --color-primary-500: 59, 130, 246;
-    --color-primary-600: 37, 99, 235;
-    --color-primary-700: 29, 78, 216;
-    --color-primary-800: 37, 99, 235; /* same as favicon/logo */
-    --color-primary-900: 30, 58, 138;
-    /* Cyan */
-    --color-secondary-50: 236, 254, 255;
-    --color-secondary-100: 207, 250, 254;
-    --color-secondary-200: 165, 243, 252;
-    --color-secondary-300: 103, 232, 249;
-    --color-secondary-400: 34, 211, 238;
-    --color-secondary-500: 6, 182, 212;
-    --color-secondary-600: 8, 145, 178;
-    --color-secondary-700: 14, 116, 144;
-    --color-secondary-800: 21, 94, 117;
-    --color-secondary-900: 22, 78, 99;
+    /* Cyan primary (Tailwind cyan).
+       600 uses the 700 shade: Blowfish colors light-mode links and buttons
+       with primary-600, and true cyan-600 is only 3.7:1 on white (needs 4.5). */
+    --color-primary-50: 236, 254, 255;
+    --color-primary-100: 207, 250, 254;
+    --color-primary-200: 165, 243, 252;
+    --color-primary-300: 103, 232, 249;
+    --color-primary-400: 34, 211, 238;
+    --color-primary-500: 6, 182, 212;
+    --color-primary-600: 14, 116, 144; /* cyan-700 */
+    --color-primary-700: 14, 116, 144;
+    --color-primary-800: 21, 94, 117;
+    --color-primary-900: 22, 78, 99;
+    /* Sky secondary (Tailwind sky).
+       700 uses the 800 shade: Blowfish colors light-mode inline code with
+       secondary-700, and 800 reads closer to body text. */
+    --color-secondary-50: 240, 249, 255;
+    --color-secondary-100: 224, 242, 254;
+    --color-secondary-200: 186, 230, 253;
+    --color-secondary-300: 125, 211, 252;
+    --color-secondary-400: 56, 189, 248;
+    --color-secondary-500: 14, 165, 233;
+    --color-secondary-600: 2, 132, 199;
+    --color-secondary-700: 7, 89, 133; /* sky-800 */
+    --color-secondary-800: 7, 89, 133;
+    --color-secondary-900: 12, 74, 110;
 }
 
 .prose code::before {
@@ -30,4 +33,71 @@
 
 .prose code::after {
     content: ''
+}
+
+/* Light mode only: Blowfish gives code a background in dark mode but none in
+   light mode, so code blocks vanish into the page. */
+html:not(.dark) .chroma {
+    background-color: rgb(var(--color-neutral-100)) !important;
+}
+
+html:not(.dark) .prose :not(pre) > code {
+    background-color: rgb(var(--color-neutral-100));
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.3rem;
+}
+
+/* Wordmark. Blowfish forces inlined SVG logos into an 80x80 box; let the wide
+   wordmark keep its aspect ratio at a fixed height. */
+.logo svg {
+    width: 12rem;
+    height: auto;
+}
+
+/* Wordmark hover. The light and dark SVGs differ from their hover variants only
+   in the pill fill, so hover is driven by CSS. "svg > g > path" is the pill
+   only; the lettering sits one group deeper.
+   Light: hover darkens (#155E75, white text 7.27:1) rather than lightening, so
+   it matches the "More about me" button. Dark: #0E7490 (white text 5.36:1). */
+html:not(.dark) a:hover .logo svg > g > path {
+    fill: #155e75;
+}
+
+html.dark a:hover .logo svg > g > path {
+    fill: #0e7490;
+}
+
+/* "More about me" button: Blowfish lightens it on hover (#06B6D4), which puts
+   white text at 2.43:1. Darken it instead, to match the wordmark.
+   Tailwind's hover:!bg-primary-500 is an !important declaration inside a
+   cascade layer, and layered !important beats unlayered !important, so this
+   must sit in the same layer. */
+@layer utilities {
+    html:not(.dark) a[class~="bg-primary-600"]:hover {
+        background-color: #155e75 !important;
+    }
+}
+
+/* Consistent space between the header and page content, on every page */
+#main-content { padding-top: 1.25rem; }
+/* The theme's list template adds its own title margin; drop it so the main padding is the only gap */
+#main-content h1.mt-5 { margin-top: 0; }
+
+/* Header sizing */
+header .main-menu { padding-top: 12px; padding-bottom: 12px; }
+header .main-menu a.bf-icon-color-hover > span { font-size: 18px; font-weight: 500; }
+header .main-menu #appearance-switcher { font-size: 15.4px; }
+header .main-menu #appearance-switcher svg { height: 1.1em; width: 1.1em; }
+header .main-menu #search-button { font-size: 15.4px; padding: 4.4px 8.8px; }
+header .main-menu #search-shortcut-hint { font-size: 13.2px; }
+
+/* List pages add 40px under the description on top of the lead's own 36px.
+   When the description ends in a lead, drop the extra so lists match simple pages. */
+#main-content section.mb-10:has(> div > .lead:last-child) { margin-bottom: 0; }
+
+/* About-page banner: larger corners always; 66% wide and centered from tablet
+   width up, full width on phones. */
+#main-content figure.about-banner img { border-radius: 0.75rem; }
+@media (min-width: 768px) {
+  #main-content figure.about-banner { width: 66%; margin-left: auto; margin-right: auto; }
 }
