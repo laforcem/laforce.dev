@@ -2,7 +2,6 @@
 title: Building Sparecraft
 summary: I run several vanilla/modded Minecraft servers for free, here's how you can do the same!
 date: 2023-05-20
-lastmod: ''
 draft: true
 layout: simple
 ---

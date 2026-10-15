@@ -12,6 +12,10 @@ backend:
 site_url: https://laforce.dev
 display_url: https://laforce.dev
 
+# Leave optional fields out of saved front matter when empty (no `lastmod: ''`).
+output:
+  omit_empty_optional_fields: true
+
 # Shared media (pages). Figures reference these as "img/<file>", resolved from assets/.
 media_folder: /assets/img
 public_folder: img
