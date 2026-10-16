@@ -1,0 +1,40 @@
+{{- /* RSS for the posts section: fixed channel title, full post content. */ -}}
+{{- $dateFmt := "Mon, 02 Jan 2006 15:04:05 -0700" -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.Title | transform.XMLEscape | safeHTML }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ or .Description "Recent posts" | transform.XMLEscape | safeHTML }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ site.Language.Lang }}</language>
+    <copyright>{{ or site.Copyright (printf "© %d %s" now.Year site.Title) | transform.XMLEscape | safeHTML }}</copyright>
+    <lastBuildDate>{{ .Lastmod.Format $dateFmt | safeHTML }}</lastBuildDate>
+    {{- with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- range .RegularPages }}
+    {{- /* Feed readers can't run the Mermaid script, so swap each diagram for the PNG
+           that scripts/render-mermaid.mjs commits beside the post. The file name is a
+           hash of the diagram source (keep in sync with that script); until the image
+           exists, the diagram stays as plain source. */ -}}
+    {{- $page := . }}
+    {{- $content := .Content }}
+    {{- range $block := findRE `(?s)<pre class="not-prose mermaid">.*?</pre>` $content }}
+      {{- $src := $block | replaceRE `^<pre[^>]*>|</pre>$` "" | htmlUnescape }}
+      {{- $hash := substr (crypto.SHA256 (strings.TrimSpace (replace $src "\r\n" "\n"))) 0 12 }}
+      {{- with $page.Resources.GetMatch (printf "diagram-%s.png" $hash) }}
+        {{- $content = replace $content $block (printf `<p><img src="%s" alt="Diagram"></p>` .Permalink) }}
+      {{- end }}
+    {{- end }}
+    <item>
+      <title>{{ .Title | transform.XMLEscape | safeHTML }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .PublishDate.Format $dateFmt | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Params.summary | transform.XMLEscape | safeHTML }}</description>
+      <content:encoded>{{ $content | replaceRE `<a [^>]*href="#[^"]*"[^>]*>#</a>` "" | transform.XMLEscape | safeHTML }}</content:encoded>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

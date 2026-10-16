@@ -41,8 +41,10 @@ collections:
       - { name: lastmod, label: Last updated (only set if edited later), widget: datetime, type: date, required: false }
       - { name: draft, label: Draft, widget: boolean, default: true }
       - { name: layout, label: Layout, widget: hidden, default: simple }
-      # Raw mode only, so Hugo shortcodes like {{< lead >}} are never rewritten.
-      - { name: body, label: Body, widget: richtext, modes: [raw] }
+      # Raw is the default so Hugo shortcodes like {{< lead >}} stay as typed.
+      # Rich text is there for the Image button, which does nothing in raw mode.
+      # It keeps shortcodes intact but rewrites *em* as _em_ and escapes a bare *.
+      - { name: body, label: Body, widget: richtext, modes: [raw, rich_text] }
 
   # Whole-file editing: front matter included, so nothing structural can be
   # dropped on save (outputs, cascade, layout, show* flags).
