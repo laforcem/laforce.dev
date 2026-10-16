@@ -2,8 +2,7 @@
 title: Building Sparecraft
 summary: How I built a delivery system for a 388-mod Minecraft server
 date: 2026-10-15
-lastmod: ''
-draft: true
+draft: false
 layout: simple
 ---
 
