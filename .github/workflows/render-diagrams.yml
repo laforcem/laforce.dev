@@ -1,0 +1,59 @@
+name: Render Mermaid diagrams
+
+# The CMS commits straight to main, so render after the fact: when a post
+# changes, render its Mermaid fences to PNGs (for the RSS feed) and commit them
+# back. The bot commit only touches .png files, so it doesn't retrigger this.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**/*.md'
+      - 'scripts/render-mermaid.mjs'
+      - 'scripts/package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-diagrams
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Render diagrams
+        run: node scripts/render-mermaid.mjs
+
+      - name: Commit changed images
+        run: |
+          git add -A content
+          if git diff --cached --quiet; then
+            echo "No diagram changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Render Mermaid diagrams for the RSS feed"
+          # The CMS may have pushed while this ran; rebase onto it and retry.
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "Could not push after 3 attempts." >&2
+          exit 1

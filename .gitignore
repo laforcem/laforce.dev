@@ -2,3 +2,4 @@ public/
 resources/
 .claude/settings.local.json
 .hugo_build.lock
+scripts/node_modules/
