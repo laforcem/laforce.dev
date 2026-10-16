@@ -32,8 +32,7 @@ The trouble with this, in the end, was twofold. For one, the dev server was rela
 I eventually got sick of constantly editing installation instructions on Discord, and so ended up building an entire MkDocs documentation site for the pack. It covered installation, misc guides, FAQ, and a complete modlist. It was my first time working with MkDocs and I loved it.
 ## Gathering feedback
 There was simply no way for me to keep track of all the feedback, both verbal and text. So, I turned to my ol' reliable Trello and asked everyone to put their feedback into a basic kanban board where I could label and triage it. Some people really did add their issues to the board, but for the most part I just added new cards when I received informal feedback from someone. As you might expect, the backlog quickly outgrew my own capacity to deal with it, and in the end only a handful of cards were truly marked "done".
-![[Pasted image 20261015190115.png]]
-*Why would I call my friends "users"?*
+![Trello kanban board of player feedback](img/trello.png "*Why would I call my friends \"users\"?*")
 ## Final pipeline
 In the end, the deployment and distribution system still wound up having several manual steps, but the final pipeline was a massive improvement:
 ```mermaid

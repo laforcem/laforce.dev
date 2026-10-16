@@ -1,0 +1,11 @@
+{{/* Render ```mermaid fences as diagrams (the same fence Obsidian draws).
+     Blowfish only supports its {{< mermaid >}} shortcode. The theme's bundled
+     Mermaid script is emitted once per page, right after the first diagram. */}}
+<pre class="not-prose mermaid">{{ .Inner | htmlEscape | safeHTML }}</pre>
+{{ if not (.Page.Store.Get "hasMermaid") }}
+  {{ .Page.Store.Set "hasMermaid" true }}
+  {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
+  {{ $mermaidConfig := resources.Get "js/mermaid.js" | resources.Minify }}
+  {{ $mermaidJS := slice $mermaidLib $mermaidConfig | resources.Concat "js/mermaid.bundle.js" | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script defer src="{{ $mermaidJS.RelPermalink }}" integrity="{{ $mermaidJS.Data.Integrity }}"></script>
+{{ end }}
