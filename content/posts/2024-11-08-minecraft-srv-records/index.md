@@ -2,8 +2,8 @@
 title: A brief note on Minecraft and SRV DNS records
 summary: I had a hard time finding documentation on how Minecraft handles servers hosted on SRV records.
 date: 2024-11-08
-layout: "simple"
-draft: false
+draft: true
+layout: simple
 ---
 
 Recently, I've been hosting multiple Minecraft servers on my one beefy Oracle Cloud instance. Demand has been surprisingly high, so on top of my 350-plus-mod custom Forge server, I host a couple vanilla ones as well for my friends. There are no issues with this on an infrastructure level (unless you count resource limitations), but networking proved to be a bit of a challenge with this one.
